@@ -425,6 +425,8 @@ services:
         - ./data/web/inc/functions.auth.inc.php:/mailcowauth/functions.auth.inc.php:z
         - ./data/web/inc/sessions.inc.php:/mailcowauth/sessions.inc.php:z
         - sogo-web-vol-1:/usr/lib/GNUstep/SOGo/
+      ports:
+        - "8080:80"
       labels:
         - "traefik.enable=true"
         - "traefik.http.routers.mailcow.rule=Host(\`${MAILCOW_HOSTNAME}\`)"
